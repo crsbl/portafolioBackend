@@ -17,7 +17,9 @@ io.on("connection", function (socket) {
   socket.emit("txtUsers", msj);
   socket.emit("listUsers", users);
 
-  //ENVIAR TEXTO
+});
+
+  //ENVIAR TEXTO  
   socket.on("sendText", (text) => {
     console.log("12", msj);
     msj.push({ id: text?.id, text: text?.text });
@@ -36,8 +38,8 @@ io.on("connection", function (socket) {
 
   socket.on("disconnect", (text) => {
     console.log("usuario desconectado");
-    let busqueda = users.filter((list) => list.id == text.id);
+    
+/*     let busqueda = users.filter((list) => list.id == text.id);
     console.log("asd", busqueda);
-    console.log(text.id);
+    console.log(text.id); */
   });
-});
