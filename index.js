@@ -1,7 +1,6 @@
 const httpServer = require("http").createServer();
 
 let msj = [];
-
 let users = [];
 
 let server = httpServer.listen(process.env.PORT || 3001, () => {
@@ -38,7 +37,7 @@ io.on("connection", function (socket) {
   socket.on("disconnect", (text) => {
     console.log("usuario desconectado");
     let busqueda = users.filter((list) => list.id == text.id);
-    console.log('asd',busqueda);
-    console.log(text.id)
+    console.log("asd", busqueda);
+    console.log(text.id);
   });
 });
